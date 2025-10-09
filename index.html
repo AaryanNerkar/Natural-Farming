@@ -2,12 +2,11 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EcoFarms - Nurturing Nature, Empowering Communities</title>
+<title>EcoFarm - Natural Farming Awareness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
 <script>
     tailwind.config = {
       darkMode: "class",
@@ -15,17 +14,26 @@
         extend: {
           colors: {
             "primary": "#66b814",
+            "primary-darker": "#559a10",
             "background-light": "#f7f8f6",
             "background-dark": "#192111",
-            "accent": "#f59e0b"
+            "foreground-light": "#141811",
+            "foreground-dark": "#e0e5dc",
+            "card-light": "#ffffff",
+            "card-dark": "#202916",
+            "border-light": "#e0e5dc",
+            "border-dark": "#303d24",
+            "muted-light": "#758863",
+            "muted-dark": "#a0b887"
           },
           fontFamily: {
-            "display": ["Work Sans"]
+            "display": ["Public Sans", "sans-serif"],
+            "logo": ["Playfair Display", "serif"]
           },
           borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
             "full": "9999px"
           },
         },
@@ -33,261 +41,300 @@
     }
   </script>
 <style>
-    .font-display {
-      font-family: 'Work Sans', sans-serif;
-    }details>summary {
-      list-style: none;
-    }
-    details>summary::-webkit-details-marker {
-      display: none;
-    }
-    details[open] summary .plus-icon {
-      transform: rotate(45deg);
-    }
-    .group:hover .group-hover\:scale-110 {
-        transform: scale(1.1);
-    }
-    .social-icon:hover {
-      filter: drop-shadow(0 0 10px #66b814) drop-shadow(0 0 20px #66b814);
+    body {
+      font-family: 'Public Sans', sans-serif;
     }
   </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-stone-800 dark:text-stone-200">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-stone-200 dark:border-stone-800">
-<div class="container mx-auto flex items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-4">
-<div class="flex items-center gap-3">
-<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+<body class="bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-card-light dark:bg-card-dark/80 backdrop-blur-sm shadow-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-2">
+<svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+<path d="M2 17l10 5 10-5"></path>
+<path d="M2 12l10 5 10-5"></path>
+<path d="M20 12v5.5a2.5 2.5 0 01-5 0V12"></path>
+<path d="M15 12a5 5 0 00-4.47-4.94"></path>
 </svg>
-<h2 class="text-xl font-bold text-stone-900 dark:text-white">EcoFarms</h2>
+<h2 class="text-zinc-900 text-xl font-bold leading-tight tracking-[-0.015em]">EcoFarms</h2>
 </div>
-<nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-<a class="text-stone-600 dark:text-stone-300 hover:text-primary dark:hover:text-primary transition-colors" href="index.html">Home</a>
-<a class="text-stone-600 dark:text-stone-300 hover:text-primary dark:hover:text-primary transition-colors" href="team_page.html">About</a>
-<a class="text-stone-600 dark:text-stone-300 hover:text-primary dark:hover:text-primary transition-colors" href="story_page.html">Stories</a>
-<a class="text-stone-600 dark:text-stone-300 hover:text-primary dark:hover:text-primary transition-colors" href="contact_page.html">Contact</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-medium text-foreground-light dark:text-foreground-dark hover:text-primary dark:hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-medium text-foreground-light dark:text-foreground-dark hover:text-primary dark:hover:text-primary transition-colors" href="team_page.html">About Us</a>
+<a class="font-medium text-foreground-light dark:text-foreground-dark hover:text-primary dark:hover:text-primary transition-colors" href="story_page.html">Our Stories</a>
+<a class="font-medium text-foreground-light dark:text-foreground-dark hover:text-primary dark:hover:text-primary transition-colors" href="contact_page.html">Contact</a>
 </nav>
-<div class="hidden md:flex items-center gap-2">
-<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold transition-transform hover:scale-105">
-<span class="truncate">Donate</span>
-</button>
+<div class="flex items-center gap-4">
+<a class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors" href="#">Donate</a>
 </div>
-<button class="md:hidden text-stone-800 dark:text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
+</div>
 </div>
 </header>
-<main class="flex-1">
-<section class="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center text-center text-white px-4 overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="A glossy, panoramic banner of natural farming, seamlessly blending regenerative farmland and urban agriculture. Diverse farmers and gardeners tend crops, a drone hovers nearby, and a cow grazes peacefully. The midground shows terraced fields and a modern farmhouse, with a city skyline and wind turbines in the background. The style is a photorealistic and vector hybrid, with a glossy finish and vibrant, earthy colors." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtHiPKWR9YYAsf26juT591ePJP_bLqEQuObZyEHDQApyEughxyJfT-3K1q0hlaG-x7J36lXgF8pjVYxE2FRSCKiOH3tIOb03e2QTZJ6JTlsjqa8eJAtMPqp7k7cqLDMvYpgJEgbMXLVQZOTZC2beSb6TmAdmCyfgIh4RsIIYkco4yXgDVdKxj4BZNunGgjo0M00zp50HmU3r1EnTu0sh-zqrsl87CzCTLYg4OcOlng9I4ysTPxscAVEfV1rOlhYCPNXg01KW7i4qcM"/>
+<main class="flex-grow">
+<section class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-q4eb13TFbVsJfSUjKTeFRRgszAdWvcv-JQLUBV60fIPt_6Rp528Ba9ezgJOU6PTG2LdVxUIhtEEdLBEz3aavvxFEtMQMt_e9ew2uJDhgES337vkuGAmEXIMjItyXPT1nmtQujLi2fzTmH2TtwiIgcG3PeIUgB_4Y1Mg-7Z2jmYxy9lyUS8QnG0M2ZFSs8JoKr4sWoH_HTseL8L2-jOPd5kdVXc_HKEG2_Q2P7JlorP1ka5ab9TghueQ3NvOaAdWSo8eUC9lNQhPY');">
+<div class="absolute inset-0 bg-black/40"></div>
 </div>
-<div class="relative z-10 flex flex-col items-center gap-6 max-w-4xl text-stone-800 dark:text-white">
-<h1 class="text-4xl md:text-6xl font-black tracking-tighter !text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Nurturing Nature, Empowering Communities</h1>
-<p class="text-base md:text-lg font-light max-w-2xl !text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Spreading awareness about Natural Farming through farmer stories, school visits, and community impact.</p>
-<div class="flex flex-wrap justify-center gap-4 mt-4">
-<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg transition-transform hover:scale-105">
-<span class="text-accent">🌾</span>
-<a href="story_page.html"
-   class="ml-2 truncate text-indigo-00 hover:underline"
-   aria-label="Open Farmer Stories page">
-  Farmer Stories
-</a>
-</button>
-</div>
+<div class="relative z-10 p-4 max-w-4xl mx-auto text-white">
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight">Natural Farming: Nurturing Our Planet, Sustaining Our Future</h1>
+<p class="mt-4 text-lg md:text-xl font-light">Explore the principles and profound benefits of natural farming, a holistic approach to agriculture that prioritizes ecological balance and human well-being.</p>
 </div>
 </section>
-<section class="py-16 sm:py-24 bg-background-light dark:bg-background-dark">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-white">Get Involved</h2>
-<p class="mt-4 text-lg text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">Join our movement to promote natural farming and create a sustainable future. Your support can make a real difference.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group bg-white dark:bg-background-dark/50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-2">
-<div class="text-primary text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-<span class="material-symbols-outlined">volunteer_activism</span>
-</div>
-<h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">Volunteer</h3>
-<p class="text-stone-600 dark:text-stone-300 mb-6 flex-grow">Lend your skills and time to help us with events, workshops, and community outreach programs. Be a part of the change on the ground.</p>
-<a class="inline-block mt-auto bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors" href="contact_page.html">Become a Volunteer</a>
-</div>
-<div class="group bg-white dark:bg-background-dark/50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-2">
-<div class="text-primary text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-<span class="material-symbols-outlined">handshake</span>
-</div>
-<h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">Partner With Us</h3>
-<p class="text-stone-600 dark:text-stone-300 mb-6 flex-grow">Collaborate with us to amplify our impact. We welcome partnerships with organizations, businesses, and educational institutions.</p>
-<a class="inline-block mt-auto bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors" href="contact_page.html">Partner Enquiry</a>
-</div>
-<div class="group bg-white dark:bg-background-dark/50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-2">
-<div class="text-primary text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-<span class="material-symbols-outlined">campaign</span>
-</div>
-<h3 class="text-2xl font-bold text-stone-900 dark:text-white mb-2">Spread the Word</h3>
-<p class="text-stone-600 dark:text-stone-300 mb-6 flex-grow">Follow us on social media, share our stories, and help raise awareness about the benefits of natural farming in your community.</p>
-<a class="inline-block mt-auto bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors" href="#">Share Our Mission</a>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 sm:py-24 bg-primary/10 dark:bg-primary/20">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<h2 class="text-3xl md:text-4xl font-bold text-center text-stone-900 dark:text-white mb-12">Frequently Asked Questions</h2>
-<div class="max-w-3xl mx-auto space-y-4">
-<details class="group bg-white dark:bg-background-dark/50 rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out">
-<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-stone-900 dark:text-white">
-                What is natural farming?
-                <span class="material-symbols-outlined plus-icon transition-transform duration-300">add</span>
-</summary>
-<p class="mt-4 text-stone-600 dark:text-stone-300">
-                Natural farming is an ecological farming approach that works in harmony with nature. It avoids synthetic fertilizers and pesticides, focusing on building healthy soil ecosystems to produce nutritious food.
-              </p>
-</details>
-<details class="group bg-white dark:bg-background-dark/50 rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out">
-<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-stone-900 dark:text-white">
-                How can I start practicing natural farming?
-                <span class="material-symbols-outlined plus-icon transition-transform duration-300">add</span>
-</summary>
-<p class="mt-4 text-stone-600 dark:text-stone-300">
-                You can start by creating your own compost, using natural pest repellents, and learning about companion planting. We offer workshops and resources to guide you.
-              </p>
-</details>
-<details class="group bg-white dark:bg-background-dark/50 rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out">
-<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-stone-900 dark:text-white">
-                What are the benefits of natural farming?
-                <span class="material-symbols-outlined plus-icon transition-transform duration-300">add</span>
-</summary>
-<p class="mt-4 text-stone-600 dark:text-stone-300">
-                The benefits are numerous: improved soil health, better water conservation, higher nutritional value in food, reduced costs for farmers, and a healthier environment for everyone.
-              </p>
-</details>
-<details class="group bg-white dark:bg-background-dark/50 rounded-lg p-6 shadow-md transition-all duration-300 ease-in-out">
-<summary class="flex justify-between items-center cursor-pointer font-bold text-lg text-stone-900 dark:text-white">
-                How does my donation help?
-                <span class="material-symbols-outlined plus-icon transition-transform duration-300">add</span>
-</summary>
-<p class="mt-4 text-stone-600 dark:text-stone-300">
-                Your donations directly fund our awareness programs, support farmer training, help develop educational materials, and enable us to reach more communities to spread the message of natural farming.
-              </p>
-</details>
-</div>
-</div>
-</section>
-<section class="py-16 sm:py-24 bg-background-light dark:bg-background-dark">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-white">Latest News &amp; Updates</h2>
-<p class="mt-4 text-lg text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">Stay informed about our latest activities, success stories, and upcoming events.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group bg-white dark:bg-background-dark/50 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-<div class="overflow-hidden">
-<img alt="Successful workshop" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_yK3Fs_8c21X9PIuy0XtyfsTH2KYSTlmkVRjYG31pJzq8dJwl1UuHy4a5ruPcG-zA-ZyVQXdhRoF_mqSU3RH6CEw5zRbh9ETBwC2BGqGudOgvpJHL0OCzrx7hwGXJP0yHhwUsPqoyXp7h9oeeFxLVVr0MZU31tycNc23ULHlJl19CK0tafBhMO7IKWA_VYaVB-UtLzgCpL9hnX_qTBsNJC5jkGHCRjnHhmju2Seaam5oYnQr_oB86UgafpbIvlgr3Ajo1CPm1KlpE"/>
-</div>
-<div class="p-6">
-<p class="text-sm text-primary font-medium mb-2">WORKSHOP</p>
-<h3 class="text-xl font-bold text-stone-900 dark:text-white mb-2">Successful Community Workshop on Composting</h3>
-<p class="text-stone-600 dark:text-stone-300 mb-4">Over 50 participants joined our hands-on workshop last weekend, learning the art of creating nutrient-rich compost.</p>
-<a class="font-bold text-primary hover:underline" href="#">Read More →</a>
-</div>
-</div>
-<div class="group bg-white dark:bg-background-dark/50 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-<div class="overflow-hidden">
-<img alt="New Farmer Story" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEZum_d8iUafujc0nhVakfD0pdk5cjyLTJbRUFA4QS6xBsL1tJIyxR51zoW8msiikhNTZHHoN5U4bUbnUmzDQsWug7v0atKnY2YiD7FbmJ-Yo4ibCMJLJgLvPEXsNxtSmDfozp2gw6OL4xfkn4dAfgE2TfY-P_FiUR6IA6Otw_ZTlmwAYN-Zo3narrGjXwnAAgc5RarrER6zxMzbwxZgzgm70TXoav8O9Pnyz_os8cRzR-kdFWALbdbhbaFbbuwNco9HzsU3MbbLMg"/>
-</div>
-<div class="p-6">
-<p class="text-sm text-primary font-medium mb-2">FARMER STORY</p>
-<h3 class="text-xl font-bold text-stone-900 dark:text-white mb-2">A Testament to Natural Farming</h3>
-<p class="text-stone-600 dark:text-stone-300 mb-4">Discover how Prajakta transformed her struggling into a thriving, chemical-free haven that inspires her community.</p>
-<a class="font-bold text-primary hover:underline" href="prajakta_katkar.html">Read More →</a>
-</div>
-</div>
-<div class="group bg-white dark:bg-background-dark/50 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-<div class="overflow-hidden">
-<img alt="Upcoming Event" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv80dAmuDE9HKsNsnZHuukQDNOBdwXLeA7MFI3yNFl4TurltC1SmEtQlQrSdgqtmZtxtFVc_z075uhuZpIJEvWfWy1F7vsHSRWv8vc_Au2xKDXmA706J_9QrOGrrmgFth0T_JbHG3iZP0CtcmbwBumqd3YdlnUt-w9Bpl5pAnExqprRT2jXQVOZVKu1Wn_bI7pyoMidlnDqgt9V0bB6VRK-yC6WosTQNkKcu2z3hdS-UbbG3tXF70XxOMGATbWz9T4fwqGDoQuMicu"/>
-</div>
-<div class="p-6">
-<p class="text-sm text-primary font-medium mb-2">UPCOMING EVENT</p>
-<h3 class="text-xl font-bold text-stone-900 dark:text-white mb-2">Annual EcoFarms Fair: A Celebration of Nature</h3>
-<p class="text-stone-600 dark:text-stone-300 mb-4">Join us for a day of fun, food, and learning! The fair will feature local produce, expert talks, and activities for all ages.</p>
-<a class="font-bold text-primary hover:underline" href="#">Read More →</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 sm:py-24 bg-white dark:bg-background-dark/50">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-white">Discover Natural Farming</h2>
-<p class="mt-4 text-lg text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">Learn more about the principles and advantages of adopting a natural approach to agriculture for a healthier planet and healthier you.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+<section class="py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
 <div class="space-y-6">
-<div>
-<h3 class="text-2xl font-bold text-primary mb-2">Core Principles</h3>
-<p class="text-stone-600 dark:text-stone-300">Natural farming is built on simple yet powerful principles: no tilling, no chemical fertilizers, no pesticides, and no weeding. It's about letting nature do what it does best, with minimal human intervention.</p>
+<h2 class="text-3xl font-bold text-primary">Why Natural Farming Matters Now More Than Ever</h2>
+<p class="text-lg text-muted-light dark:text-muted-dark">In an era of environmental challenges and growing health concerns, natural farming offers a sustainable path forward. It's not just about growing food; it's about regenerating ecosystems, empowering communities, and ensuring a healthier legacy for future generations.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Soil Health</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Water Quality</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Biodiversity</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Human Health</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Farmer Livelihoods</span></li>
+</ul>
 </div>
 <div>
-<h3 class="text-2xl font-bold text-primary mb-2">Benefits for All</h3>
-<p class="text-stone-600 dark:text-stone-300">This method restores soil health, increases biodiversity, conserves water, and produces nutrient-dense food. Farmers benefit from lower costs, and consumers enjoy healthier produce. It's a win-win for people and the planet.</p>
-</div>
-<div class="mt-8">
-<h4 class="text-xl font-bold text-stone-900 dark:text-white mb-4">Follow us on social media for more updates</h4>
-<div class="flex justify-center md:justify-start gap-6">
-<a class="text-stone-600 dark:text-stone-300 hover:text-primary transition-colors" href="#">
-<svg aria-hidden="true" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.161 1.545c-1.003.046-1.634.21-2.188.42a3.397 3.397 0 00-1.217.82 3.397 3.397 0 00-.82 1.217c-.21 1.083-.374 2.183-.42 3.268C2.013 9.48 2 9.828 2 12.001s.013 2.521.06 3.545c.046 1.086.21 2.185.42 3.27a3.397 3.397 0 00.82 1.217 3.397 3.397 0 001.217.82c1.085.21 2.183.374 3.268.42 1.024.048 1.37.06 3.546.06s2.521-.013 3.545-.06c1.086-.046 2.185-.21 3.27-.42a3.397 3.397 0 001.217-.82 3.397 3.397 0 00.82-1.217c.21-1.085.375-2.183.42-3.268C21.987 14.521 22 14.172 22 12.001s-.013-2.521-.06-3.545c-.045-1.086-.21-2.185-.42-3.27a3.397 3.397 0 00-.82-1.217 3.397 3.397 0 00-1.217-.82c-1.085-.21-2.183-.374-3.268-.42-1.024-.047-1.37-.06-3.546-.06s-2.521.013-3.545.06zm-1.633 8.411c0-2.835 2.304-5.138 5.138-5.138s5.138 2.303 5.138 5.138-2.304 5.138-5.138 5.138-5.138-2.303-5.138-5.138zM12 15.26c1.803 0 3.26-1.457 3.26-3.26s-1.457-3.26-3.26-3.26-3.26 1.457-3.26 3.26 1.457 3.26 3.26 3.26zm6.574-6.618a1.232 1.232 0 11-2.464 0 1.232 1.232 0 012.464 0z" fill-rule="evenodd"></path></svg>
-</a>
-<a class="text-stone-600 dark:text-stone-300 hover:text-primary transition-colors" href="#">
-<svg aria-hidden="true" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M21.582,6.186c-0.23-0.854-0.908-1.532-1.762-1.762C18.254,4,12,4,12,4S5.746,4,4.18,4.424 c-0.854,0.23-1.532,0.908-1.762,1.762C2,7.754,2,12,2,12s0,4.246,0.418,5.814c0.23,0.854,0.908,1.532,1.762,1.762 C5.746,20,12,20,12,20s6.254,0,7.82-0.424c0.854-0.23,1.532-0.908,1.762-1.762C22,16.246,22,12,22,12S22,7.754,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"></path></svg>
-</a>
+<img alt="Healthy farmland" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkuvQ8uwUbrd5YJMVpZ-qEH_J9vcAkWHbCr7OGskFfZ62l4a1HBahXt5Qr9qtQwSS8Pa5IJdoM1wJW7GynxgqtNKlRuVAJJAM2WAvL_3PCgQ60Gy2udhKy9vxd-65cWKU9_KjjZwKOP2qjPed6UEeYoF9bZQV6ZIKaNqlcaExBE4g5kcA5jw-2Dh_nT_tGespQMDx3oS6fkSO2hhsqrPWyfjy2XibMUJxZm242BYibim1FPNRukniA0e_u9ydT6CfNQZyFkDghhmWc"/>
 </div>
 </div>
+</section>
+<section class="bg-card-light dark:bg-card-dark py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<img alt="Compost pile" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2qyVAVTDgyhCbA6OdDE97hkCyLTOyDYVMHNDTscR44bk-9IEK4IR_GVSAqgnb24za2LSzpKRLrLOnlN7d2160ZYhkMChD1cX_EDDz3-nBIdCZ_7k7azYXqOhYYHhP_LE8eg_JKuDXKWkfO1Ve8F7iqcQK2R7PKtMCuhay72L5eb_nwN0L0hYIu4OY7qAWWhhYWwkNtbqQbQgbroZgbKEg6KRc34HpFHgeHyogL-LGttPkcFuQ7A2MO3_LYzjQIx5qMKT_YrUndfI5"/>
 </div>
-<div class="group relative rounded-xl overflow-hidden shadow-2xl cursor-pointer">
-<img alt="A vibrant, close-up shot of a healthy, dew-kissed plant shoot emerging from rich, dark soil, symbolizing growth and the essence of natural farming. The background is a soft-focus green field under a warm, rising sun, evoking hope and a new beginning." class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Q_GjD-QHadk6Mu2asRVXO7aEO4q42b7eTQDbw7ElYlxS5QtymoHL_cutC-ujlT4PvoitOktEoDowXS0wO17iiLf5bGEDqSOxVVKczY9kYwGidQNTjR-1KCUjF9FxVdtaDbQWoMs_6NRcm3D633PIsj1iDNnu7Cz5zsgJ5ueAuz_YCTLWXMAy-zMOt9MwxiONJ9_U0fHGUnguiehRe_3yATjA4DUZwHOC1fKGW3gp_PD8hLdUsqFX5IvwXPYnGUfjRuXQzjW5wo1J"/>
-<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-6xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-125">play_circle</span>
+<div class="space-y-6 order-1 md:order-2">
+<h2 class="text-3xl font-bold text-primary">What is Natural Farming? Principles of a Zero-Budget Approach</h2>
+<p class="text-lg text-muted-light dark:text-muted-dark">Natural farming, also known as 'do-nothing farming,' is a chemical-free agricultural method rooted in traditional practices. It emphasizes minimal intervention, relying on natural processes and local resources.</p>
+<ol class="space-y-4 list-decimal list-inside text-lg">
+<li class="font-semibold">No External Inputs</li>
+<li class="font-semibold">On-Farm Resource Use</li>
+<li class="font-semibold">Microbial Enrichment</li>
+<li class="font-semibold">Minimal Tillage</li>
+</ol>
 </div>
+</div>
+</section>
+<section class="py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-primary">Natural Farming vs. Chemical Farming</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-start">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+<h3 class="text-2xl font-bold mb-4">Natural Farming</h3>
+<ul class="space-y-3 text-muted-light dark:text-muted-dark">
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-primary flex-shrink-0"></span>Enhances soil fertility naturally</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-primary flex-shrink-0"></span>Promotes biodiversity</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-primary flex-shrink-0"></span>No toxic residues in food or water</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-primary flex-shrink-0"></span>Sustainable and regenerative</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-primary flex-shrink-0"></span>Low input costs</li>
+</ul>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+<h3 class="text-2xl font-bold mb-4">Chemical Farming</h3>
+<ul class="space-y-3 text-muted-light dark:text-muted-dark">
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></span>Degrades soil health over time</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></span>Reduces biodiversity</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></span>Leads to chemical runoff and pollution</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></span>Relies on synthetic inputs</li>
+<li class="flex items-start gap-3"><span class="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></span>High dependency on external products</li>
+</ul>
+</div>
+</div>
+<div class="mt-12">
+<img alt="Divided field showing natural vs chemical farming" class="rounded-xl shadow-lg w-full h-auto object-cover max-h-96" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtXPcaYICJ-NxhTVQjgy1S0_EnD161AC_BpbzSG-1EyfCdaOGyFaWVUD_pTokFPB6PQzKg6qoG_HTYqn_jKnuYoP2eDrpG-4FiDTVCexTgKaVycMUQCtN6jmxYgN8-hywfhoV9Lk711aU2ISizpYXC72BvelFGxcTZJKWoIYUP9TAoNYOlAuxEr2eiwtVVWeTlgV_1n_8O0U9Xo1sv-485GpkJtE2A9gHfFqdixImO7161luV1FMOZcyTDU7ZD07LidDCVwjfUG9Rr"/>
+</div>
+</div>
+</section>
+<section class="bg-card-light dark:bg-card-dark py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12 max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-primary">Natural Farming vs. Organic Farming</h2>
+<p class="mt-4 text-lg text-muted-light dark:text-muted-dark">Key Distinctions and Shared Goals</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-start">
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg">
+<h3 class="text-2xl font-bold mb-4">Natural Farming</h3>
+<p class="text-muted-light dark:text-muted-dark">Focuses on a 'do-nothing' philosophy, with zero external inputs, relying entirely on the local ecosystem. Tillage is minimal to none.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-6 rounded-lg">
+<h3 class="text-2xl font-bold mb-4">Organic Farming</h3>
+<p class="text-muted-light dark:text-muted-dark">Avoids synthetic chemicals but allows for organic-certified external inputs like compost, manure, and certain pesticides. Tillage is common.</p>
+</div>
+</div>
+<div class="mt-8 bg-background-light dark:bg-background-dark p-6 rounded-lg">
+<h3 class="text-2xl font-bold mb-4 text-center">Shared Goals</h3>
+<p class="text-muted-light dark:text-muted-dark text-center max-w-2xl mx-auto">Both approaches share the fundamental goals of producing chemical-free food, improving soil health, and promoting a more sustainable agricultural system that works in harmony with nature.</p>
+</div>
+<div class="mt-12">
+<img alt="Fresh organic produce" class="rounded-xl shadow-lg w-full h-auto object-cover max-h-96" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO7kH0Nr9fRAXUYqIQ1inuNmiUVIda2qJyb-qA-yXcUDyP9lEzBMtsjIZbz9UqrzrvZz3I5YKg80L_kktJkwyDzf6w_jM9eieUYnVKJkubhfRuvXkPucpjTQPnMZkwWoXyNIwUHN7gmvT9yWNjgdqcIIKGnirn4oulpzwjS5pS-1IKlwh7Wt0TjYeXNpjOklI6ct7WzGvgGreqendW3IY7Bu9BoU-j4gVx1zgHfsIwUAU5qC1lAUCAHWJHg279N1teBm1rO31GYVu3"/>
+</div>
+</div>
+</section>
+<section class="py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h2 class="text-3xl font-bold text-primary">Benefits for Nature I: Revitalizing Soil Health and Biodiversity</h2>
+<p class="text-lg text-muted-light dark:text-muted-dark">Natural farming practices enhance soil structure, increase organic matter, and support a diverse range of beneficial organisms. This leads to healthier ecosystems and improved resilience to environmental stresses.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Improved Soil Structure</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Increased Organic Matter</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Support for Beneficial Organisms</span></li>
+</ul>
+</div>
+<div>
+<img alt="Rich soil texture with earthworms" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3EHQ5o3Yfi9DqA20W-vsw_TEh4i4OrC0BXLS2R2BzTl2aZkkO4YvjAN4ryZCHUfIxvvM9iwgVK1Al2XFvMqJZumydrtr29y9vz2bk_-y6AJhox4k9mKxskT1eh40g5Y_wfy4IF_b-FgT6geRM6AUPDVjcm0dCyQ9VtFcyxpvIm4DKOw43hy_1lgI5ndjeMnjt-Nhv8MlIeOrcHzLUTacYpmUASTQi81Zy3P3K3cPTvYGL9ZIWoKgVk6TOfYhxA0Y06ptr4eGIt_AQ"/>
+</div>
+</div>
+</section>
+<section class="bg-card-light dark:bg-card-dark py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<img alt="Water flowing through an irrigation channel in a farm" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN1PjsySZ2hHE6fYv9EcvwAMVuLRDqAg2ZTdhDyXa5IaxIdCh9XIGmACD9u7IGAWJckMN8emVtEH9DnrXrhbj1pwA0QwIZQ-5DXfgr4eAaS6Dvji8P8neCkvGKOe4IozGyIDXG5KpXHTncX6hntwPhQJ_4U17F-xCcxyjfLFXfk3L3dkoRlZ3dhfplrjZiscRRyW_Vw_IqS15OARFKEO60n3uC8pVJOfyemr40v6gp43HBAJPJZ2tpBBDHIZA8DKznY_yKPFmbdZcE"/>
+</div>
+<div class="space-y-6 order-1 md:order-2">
+<h2 class="text-3xl font-bold text-primary">Benefits for Nature II: Enhancing Water Conservation and Climate Resilience</h2>
+<p class="text-lg text-muted-light dark:text-muted-dark">Natural farming methods improve water infiltration, reduce water runoff, and enhance the soil's capacity to retain moisture. These practices also contribute to climate change mitigation by sequestering carbon in the soil.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Improved Water Infiltration</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Reduced Water Runoff</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Enhanced Moisture Retention</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Climate Change Mitigation</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h2 class="text-3xl font-bold text-primary">Benefits for Humans: Healthier Food, Safer Communities, and Nutritional Purity</h2>
+<p class="text-lg text-muted-light dark:text-muted-dark">Natural farming produces food that is free from synthetic chemicals, pesticides, and fertilizers. This results in healthier, more nutritious food and safer communities with reduced exposure to harmful substances.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Chemical-Free Food</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Safer Communities</span></li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-semibold">Nutritional Purity</span></li>
+</ul>
+</div>
+<div>
+<img alt="Farmer's market with fresh vegetables" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLKJvPACeFhnGZ0j70ntl-HxogoWOSeFJXI9H7h55Ceytq7772dWMdc3FHA81bdguRhoNic5JgKxHGS31XC9pxhP9LB480TvF9YjPfYJQTsewUz0k3bz1kcmdV2eriTB0TaCzFs9vk4dFR32WkR3qD60Ol8pPxzdkRKjNcxofbiFcDpfBCGBDTntnjYQRbWE6hjJY3aGd0egojkLhtdnkRxTf34Ft4cGhHrTKbLJcWKRWkWpKMLSVsw6L_pQV3xRewrikOyJj_GEHJ"/>
+</div>
+</div>
+</section>
+<section class="bg-card-light dark:bg-card-dark py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12 max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-primary">Economic and Social Advantages: Empowering Farmers, Reducing Costs</h2>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-md">
+<p class="text-5xl font-bold text-primary">90%</p>
+<p class="mt-2 text-lg font-semibold">Cost Reduction</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-md">
+<p class="text-5xl font-bold text-primary">20%</p>
+<p class="mt-2 text-lg font-semibold">Income Increase</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-md sm:col-span-2 lg:col-span-1">
+<p class="text-5xl font-bold text-primary">5M+</p>
+<p class="mt-2 text-lg font-semibold">Farmers Adopting</p>
+</div>
+</div>
+<div class="mt-12">
+<img alt="Group of farmers meeting" class="rounded-xl shadow-lg w-full h-auto object-cover max-h-96" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCApQYq1HM4GJCE15tT6-UeF_fqC6-2EkPvY8V1Vy5cU6yhbOEbXx8TfUU0JJ_Rn35H7CA7upNHr8dGnxSkCsVYqed0Zc6iqR8l57dM7mG2OCMRdFaL4PbKLudlqQVXZnSlK6NR2WAamreINIdYHLYhdVzv_FVJViiiuDEvUFc2C6mvmTtUQvFlchBeWqx8tyFK1PONivby_Wjp578irSLcD9zdGGOwCsgSC3u23lMwCgSuLj3XH94QnuXjGvbmOOOvPtYAeMFgW67j"/>
+</div>
+</div>
+</section>
+<section class="py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h2 class="text-3xl font-bold text-primary">Implementing Natural Farming: Practical Approaches and Success Stories</h2>
+<ol class="space-y-4 list-decimal list-inside text-lg">
+<li class="font-semibold">Compost &amp; Mulching</li>
+<li class="font-semibold">Crop Diversification</li>
+<li class="font-semibold">Natural Pest Control</li>
+<li class="font-semibold">Community Support</li>
+</ol>
+</div>
+<div>
+<img alt="Sustainable farm" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5S2IzVDXrVFNtmfjh6KmpvrNF9W7EvwwPqcVj6hFNZnkvGL8WeNBSszedM4yt9uZBLI2gR4G7xeHFmSrxk02MoHUrMRExafB3sqNbDNOa2uOSn6n5rQU9OX-_fRPC_BRfkFSVlNH5qlK43HmUUU0spG3c5OwGjc1rJPijsufFedavulvTzxmsNMQjagSuGh9kLDQexGeVeC0M3GuzSkY1GCE3dDNaPG0UvwGal16fvCBS_e4ZAVRaqsca-d1QyDBOAAmkMXOuNoyl"/>
+</div>
+</div>
+</section>
+<section class="bg-card-light dark:bg-card-dark py-16 lg:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<img alt="Herbs and natural medicinal plants" class="rounded-xl shadow-lg w-full h-auto object-cover aspect-square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQB_Xeaen8jcGusBuo_dI4YxJI-uF096Z_-hK9y5e3k33gr4KvKtWhrsv3IA2Gf8pyCgLtwe3zcrJpVX4rvAAFDWqnlsLqQT-Dt1mghK0uOfUuWIXphiuoyqQZdO6Qcj8n1T9-sTYjHkK4Q0EKGLrhNMR4yB-z-8ToqBVy7oOE1IaAJnfoi39H_n3skclwcF4YL0QmdJIEtqZ6G3IzoSoDaVwt8GiK5rtflqKd2i7zempsd_4GGqxuvyaVfjPkGH0Zh3QtYk-nJBK_"/>
+</div>
+<div class="space-y-6 order-1 md:order-2">
+<h2 class="text-3xl font-bold text-primary">How Natural Food Acts as a Medicine</h2>
+<div>
+<h3 class="text-xl font-bold mb-2">How it works:</h3>
+<ul class="space-y-3 list-disc list-inside text-muted-light dark:text-muted-dark">
+<li>Nutrient-Rich Foods</li>
+<li>Improved Digestion</li>
+<li>Enhanced Immunity</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Examples:</h3>
+<ul class="space-y-3 list-disc list-inside text-muted-light dark:text-muted-dark">
+<li>Turmeric for Inflammation</li>
+<li>Aloe Vera for Skin Health</li>
+<li>Basil for Respiratory Issues</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
 </main>
-<footer class="bg-black text-stone-300">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-<div class="flex flex-col items-center md:items-start">
-<div class="flex items-center gap-3 mb-4">
-<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+<footer class="bg-black text-gray-300">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+<path d="M2 17l10 5 10-5"></path>
+<path d="M2 12l10 5 10-5"></path>
+<path d="M20 12v5.5a2.5 2.5 0 01-5 0V12"></path>
+<path d="M15 12a5 5 0 00-4.47-4.94"></path>
 </svg>
-<h2 class="text-xl font-bold text-white">EcoFarms</h2>
+<h1 class="text-3xl font-logo font-bold bg-gradient-to-r from-primary to-primary-darker text-transparent bg-clip-text">EcoFarm</h1>
 </div>
-<p class="text-stone-400 max-w-xs">Join us in spreading awareness about Natural Farming for a sustainable future.</p>
+<p class="text-sm">Nurturing our planet, sustaining our future through natural farming awareness.</p>
 </div>
-<div class="flex flex-col items-center md:items-start">
-<h3 class="text-xl font-bold text-white mb-4">Get in Touch</h3>
-<ul class="space-y-3">
-<li><a class="flex items-center gap-3 text-stone-400 hover:text-primary transition-colors" href="mailto:contact@ecofarms.org"><span class="material-symbols-outlined text-primary">email</span>contact@ecofarms.org</a></li>
-<li><a class="flex items-center gap-3 text-stone-400 hover:text-primary transition-colors" href="tel:+1234567890"><span class="material-symbols-outlined text-primary">phone</span>9994487212</a></li>
-<li><p class="flex items-center gap-3 text-stone-400"><span class="material-symbols-outlined text-primary">location_on</span>PCCOE PUNE</p></li>
+<div class="col-span-1">
+<h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="team_page.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="story_page.html">Our Stories</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Donate</a></li>
 </ul>
 </div>
-<div class="flex flex-col items-center md:items-start">
-<h3 class="text-xl font-bold text-white mb-4">Connect With Us</h3>
-<div class="flex justify-center md:justify-start gap-6 mt-2">
-<a class="text-stone-300 hover:text-primary transition-all duration-300 social-icon" href="#"><svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919C8.415 2.175 8.796 2.163 12 2.163m0-2.163C8.74 0 8.333.01 7.053.062 2.695.272.273 2.69.063 7.053.01 8.333 0 8.74 0 12s.01 3.667.063 4.947c.21 4.358 2.631 6.78 7.009 6.99.851.042 1.24.053 3.928.053s3.077-.011 3.928-.053c4.378-.21 6.799-2.632 7.009-7.009.053-1.28.062-1.687.062-4.947s-.009-3.667-.062-4.947C23.728 2.69 21.306.272 16.947.062 15.667.01 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path></svg></a>
-<a class="text-stone-300 hover:text-primary transition-all duration-300 social-icon" href="#"><svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.582,6.186c-0.23-0.854-0.908-1.532-1.762-1.762C18.254,4,12,4,12,4S5.746,4,4.18,4.424 c-0.854,0.23-1.532,0.908-1.762,1.762C2,7.754,2,12,2,12s0,4.246,0.418,5.814c0.23,0.854,0.908,1.532,1.762,1.762 C5.746,20,12,20,12,20s6.254,0,7.82-0.424c0.854-0.23,1.532-0.908,1.762-1.762C22,16.246,22,12,22,12S22,7.754,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z"></path></svg></a>
-<a class="text-stone-300 hover:text-primary transition-all duration-300 social-icon" href="#"><svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
-<a class="text-stone-300 hover:text-primary transition-all duration-300 social-icon" href="#"><svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+<div class="col-span-1">
+<h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+<ul class="space-y-2">
+<li><p>Email: contact@ecofarm.org</p></li>
+<li><p>Phone: +91 9998175631</p></li>
+<li><p>PCCOE PUNE</p></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h3 class="text-lg font-semibold text-white mb-4">Follow Us</h3>
+<div class="flex space-x-4">
+<a class="hover:text-primary transition-colors" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.48 2.96,10.29 2.38,10V10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16.02 6.13,17.26 8.13,17.29C6.67,18.45 4.82,19.14 2.83,19.14C2.47,19.14 2.12,19.12 1.77,19.08C3.78,20.36 6.1,21.16 8.64,21.16C16,21.16 20.38,15.11 20.38,9.75C20.38,9.57 20.38,9.39 20.37,9.21C21.19,8.63 21.89,7.89 22.46,7.03L22.46,6Z"></path></svg></a>
+<a class="hover:text-primary transition-colors" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C21.99,6.48 17.52,2 12,2M17,17H15V12.5C15,11.53 14.28,10.84 13.34,10.84C12.82,10.84 12.33,11.1 12,11.5V17H10V9H12V10.21C12.43,9.5 13.16,9 14,9C15.66,9 17,10.34 17,12V17M7,17H9V9H7V17M8,8A1,1 0 0,1 7,7A1,1 0 0,1 8,6A1,1 0 0,1 9,7A1,1 0 0,1 8,8Z"></path></svg></a>
+<a class="hover:text-primary transition-colors" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg></a>
 </div>
 </div>
 </div>
-<div class="border-t border-stone-800 mt-12 pt-8 text-center text-stone-500">
-<p class="text-sm">© 2025 EcoFarms. All rights reserved. | <a class="hover:text-primary" href="#">Privacy Policy</a> | <a class="hover:text-primary" href="#">Terms of Service</a></p>
+<div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+<p>© 2024 EcoFarm. All Rights Reserved.</p>
 </div>
 </div>
 </footer>
